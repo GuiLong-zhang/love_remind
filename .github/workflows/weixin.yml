@@ -23,4 +23,4 @@ jobs:
       - name: weixin
         run: |
           #python3 main.py
-          python3 天气预报第二版.py
+          python3 love_remind.py
