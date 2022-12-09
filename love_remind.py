@@ -41,8 +41,10 @@ def send_message(to_user, access_token, remind):
     day = localtime().tm_mday
     today = datetime.date(datetime(year=year, month=month, day=day))
     week = week_list[today.isoweekday() % 7]
-    time_now = str(int(datetime.now().strftime("%H"))+8)+":"+ datetime.now().strftime("%M")
-
+    time_hour = int(datetime.now().strftime("%H"))+8
+    if time_hour > 24:
+        time_hour = time_hour - 24
+    time_now = str(str(time_hour)+":" + datetime.now().strftime("%M"))
     template = "aGrgx9QvtfBZsw-h4J83ojoqExdZ6Ua2xYx69vKPop0"
     data = {
         "touser": to_user,
